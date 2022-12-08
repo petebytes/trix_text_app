@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TrixTextApp</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+
+    <% if Rails.env.development? %>
+      <%= javascript_include_tag "hotwire-livereload", defer: true %>
+    <% end %>
+
+  </head>
+
+  <body>
+    <main class="container mx-auto mt-28 px-5 flex">
+      <%= yield %>
+    </main>
+
+        <%# Debug in dev only %>
+    <% if Rails.env === "development" %>
+      <span class="block sm:hidden absolute top-10 left-36 text-gray-700">
+        < 640
+      </span>
+      <span class="hidden sm:block md:hidden absolute top-10 left-36 text-gray-700">
+        SM 641:768
+      </span>
+      <span class="hidden md:block lg:hidden absolute top-10 left-36 text-gray-700">
+        MD 769:1024
+      </span>
+      <span class="hidden lg:block xl:hidden absolute top-10 left-36 text-gray-700">
+        LG 1025:1280
+      </span>
+      <span class="hidden xl:block 2xl:hidden absolute top-10 left-36 text-gray-700">
+        XL 1281:1536
+      </span>
+      <span class="hidden 2xl:block absolute top-10 left-36 text-gray-700">
+        2XL > 1536
+      </span>
+
+      <!-- Web Console -->
+      <%= console %>
+    <% end %>
+
+  </body>
+</html>

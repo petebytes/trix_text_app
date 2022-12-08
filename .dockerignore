@@ -1,0 +1,46 @@
+# Database files
+db/*.sqlite3
+db/*.sqlite3-journal
+
+# Temporary and Log files
+log/*
+tmp/*
+
+# Docker files
+Dockerfile*
+docker-compose*
+.dockerignore
+development-entrypoint
+
+# Version Control Files
+.git
+.gitignore
+
+# Private files
+.env
+readme.private.md
+config/master.key
+
+# OS artifacts:
+**/.DS_Store
+
+# Test files
+Guardfile
+.rspec
+spec/
+
+# Other
+*/bin
+*/obj
+README.md
+LICENSE
+.vscode
+README.rdoc
+node_modules
+npm-debug.log
+.bash_history
+.byebug_hist
+.byebug_history
+.pry_history
+.guard_history
+.bundle/*

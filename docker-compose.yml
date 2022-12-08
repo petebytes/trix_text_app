@@ -1,0 +1,67 @@
+version: "3.6"
+
+services:
+  app: &app
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        RAILS_ENV: "development"
+        RAILS_SERVE_STATIC_FILES: "false"
+    image: trixtestapp
+    container_name: trixtestapp
+    command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
+    ports:
+      - 3000:3000
+      - 3001:3001
+    volumes:
+      - .:/app:cached
+      - rails_cache:/tmp/cache
+      - bundle:/bundle
+    tmpfs:
+      - /tmp
+    # Allow interactive byebug sessions.
+    stdin_open: true
+    tty: true
+    environment:
+      CREDENTIALS_ENV: development
+      RAILS_ENV: development
+      REDIS_URL: redis://redis:6379
+      RAILS_LOG_TO_STDOUT: true
+    depends_on:
+      redis:
+        condition: service_started
+
+  tailwind:
+    image: trixtestapp
+    command: bin/rails tailwindcss:watch
+    tty: true # to keep the watch process running
+    volumes:
+      - .:/app
+      - bundle:/bundle
+      - /tmp
+    environment:
+      DB_HOST: db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: pass4test
+      RAILS_ENV: development
+      RAILS_LOG_TO_STDOUT: true
+      RUN_MIGRATION: false
+
+  redis:
+    image: redis:6.0.9-alpine
+    command: redis-server
+    ports:
+      - 6379:6379
+    volumes:
+      - redis:/data
+    healthcheck:
+      test: redis-cli ping
+      interval: 1s
+      timeout: 3s
+      retries: 30
+
+volumes:
+  redis:
+  bundle:
+  rails_cache:

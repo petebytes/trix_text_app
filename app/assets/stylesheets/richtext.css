@@ -1,0 +1,126 @@
+trix-toolbar .trix-button--icon-horizontal-rule::before {
+  background-image: image-url("trix_horizontal_rule.svg");
+}
+trix-toolbar .trix-button--icon-color::before {
+  background-image: image-url("trix_color.svg");
+}
+trix-toolbar .trix-dialog--heading {
+  max-width: 160px;
+}
+trix-toolbar .trix-dialog--color {
+  max-width: 265px;
+}
+trix-toolbar .trix-dialog--color .trix-dialog__link-fields {
+  flex-direction: column;
+}
+trix-toolbar .trix-dialog--color .trix-button-group {
+  margin: 1px;
+}
+trix-toolbar .trix-dialog--color .trix-button-group button {
+  width: 28px;
+}
+trix-toolbar .trix-dialog--color .trix-button-group button:after {
+  content: "Ab";
+}
+trix-toolbar .trix-dialog--color .trix-button-group button.trix-active::after {
+  content: "✓";
+}
+trix-toolbar .trix-dialog--color .trix-button-group [data-trix-attribute=fgColor1] {
+  color: #887626;
+}
+trix-toolbar .trix-dialog--color .trix-button-group [data-trix-attribute=fgColor2] {
+  color: #887626;
+}
+trix-toolbar .trix-dialog--color .trix-button-group [data-trix-attribute=fgColor3] {
+  color: #cf0000;
+}
+trix-toolbar .trix-dialog--color .trix-button-group [data-trix-attribute=fgColor4] {
+  color: #d81caa;
+}
+trix-toolbar .trix-dialog--color .trix-button-group [data-trix-attribute=fgColor5] {
+  color: #9013fe;
+}
+trix-toolbar .trix-dialog--color .trix-button-group [data-trix-attribute=fgColor6] {
+  color: #0562b9;
+}
+trix-toolbar .trix-dialog--color .trix-button-group [data-trix-attribute=fgColor7] {
+  color: #118a0f;
+}
+trix-toolbar .trix-dialog--color .trix-button-group [data-trix-attribute=fgColor8] {
+  color: #945216;
+}
+trix-toolbar .trix-dialog--color .trix-button-group [data-trix-attribute=fgColor9] {
+  color: #666;
+}
+trix-toolbar .trix-dialog--color .trix-button-group [data-trix-attribute=bgColor1] {
+  background-color: #faf785;
+}
+trix-toolbar .trix-dialog--color .trix-button-group [data-trix-attribute=bgColor2] {
+  background-color: #fff0db;
+}
+trix-toolbar .trix-dialog--color .trix-button-group [data-trix-attribute=bgColor3] {
+  background-color: #ffe5e5;
+}
+trix-toolbar .trix-dialog--color .trix-button-group [data-trix-attribute=bgColor4] {
+  background-color: #ffe4f7;
+}
+trix-toolbar .trix-dialog--color .trix-button-group [data-trix-attribute=bgColor5] {
+  background-color: #f2edff;
+}
+trix-toolbar .trix-dialog--color .trix-button-group [data-trix-attribute=bgColor6] {
+  background-color: #e1effc;
+}
+trix-toolbar .trix-dialog--color .trix-button-group [data-trix-attribute=bgColor7] {
+  background-color: #e4f8e2;
+}
+trix-toolbar .trix-dialog--color .trix-button-group [data-trix-attribute=bgColor8] {
+  background-color: #eee2d7;
+}
+trix-toolbar .trix-dialog--color .trix-button-group [data-trix-attribute=bgColor9] {
+  background-color: #f2f2f2;
+}
+trix-toolbar .trix-dialog {
+  padding: 5px;
+}
+trix-toolbar .trix-dialog .trix-dialog-hidden__input {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+trix-editor [data-trix-mutable].attachment[data-trix-content-type~="vnd.rubyonrails.horizontal-rule.html"] {
+  box-shadow: 0 0 0 2px highlight;
+}
+.trix-content h1, .trix-content h2, .trix-content h3, .trix-content h4, .trix-content h5, .trix-content h6 {
+  line-height: 1.2;
+  margin: 0;
+}
+.trix-content h1 {
+  font-size: 36px;
+}
+.trix-content h2 {
+  font-size: 26px;
+}
+.trix-content h3 {
+  font-size: 18px;
+}
+.trix-content h4 {
+  font-size: 18px;
+}
+.trix-content h5 {
+  font-size: 14px;
+}
+.trix-content h6 {
+  font-size: 12px;
+}
+.trix-content .attachment {
+  width: 100%;
+}
+.trix-content .attachment--content.attachment--horizontal-rule, .trix-content .attachment--content[data-trix-content-type~='vnd.rubyonrails.horizontal-rule.html'] {
+  padding: 1.5em 0 0.5em !important;
+  margin-bottom: 0.5em;
+}
+.trix-content .attachment--content.attachment--horizontal-rule hr, .trix-content .attachment--content[data-trix-content-type~='vnd.rubyonrails.horizontal-rule.html'] hr {
+  margin: 0;
+  width: 20%;
+  border-color: currentColor;
+}
