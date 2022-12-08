@@ -1,11 +1,10 @@
-import Trix from "trix"
 
-addHeadingAttributes()
-addForegroundColorAttributes()
-addBackgroundColorAttributes()
-
-addEventListener("trix-initialize", function (event) {
-    new RichText(event.target)
+(async () => {
+addEventListener("trix-before-initialize", function (event) {
+  new RichText(event.target)
+	addHeadingAttributes()
+	addForegroundColorAttributes()
+	addBackgroundColorAttributes()
 })
 
 addEventListener("trix-action-invoke", function (event) {
@@ -168,3 +167,6 @@ function addBackgroundColorAttributes() {
     Trix.config.textAttributes[`bgColor${(i + 1)}`] = { style: { backgroundColor: color }, inheritable: true, parser: e => e.style.backgroundColor == color }
   })
 }
+
+	window.Trix = await import("trix").default
+})()
