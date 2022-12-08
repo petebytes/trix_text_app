@@ -14,8 +14,8 @@
 
   <% if action_name != "show" %>
     <%= link_to "Show this post", post, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-    <%= link_to 'Edit with Turbo (works)', edit_post_path(post), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
-    <%= link_to 'Edit NO Turbo(strips h2...)', edit_post_path(post), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium", data:{turbo: false} %>
+    <%= link_to 'Edit (Turbo works)', edit_post_path(post), class: "bg-green-400 rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to 'Edit (NO Turbo strips h2...)', edit_post_path(post), class: "bg-red-500 text-white rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium", data:{turbo: false} %>
     <hr class="mt-6">
   <% end %>
 </div>
